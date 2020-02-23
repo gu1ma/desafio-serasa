@@ -1,15 +1,16 @@
 import React from 'react';
+import {Container} from './styles';
 
-import {Container, Title} from './styles';
+import CardHead from '~/components/CardHead';
+import CardContainer from '~/components/CardContainer';
 
 export default function Main() {
   return (
     <Container>
-      <Title>MAIN PAGE</Title>
+      <CardHead />
+      <CardContainer />
     </Container>
   );
 }
 
-Main.navigationOptions = {
-  header: null,
-};
+Main.navigationOptions = {};
