@@ -4,7 +4,7 @@ import colors from '~/styles/colors';
 
 export const Container = styled.View`
   margin-top: 20px;
-  padding: 10px;
+  padding: 10px 20px;
   background: white;
   border-radius: 5px;
   border: #ccc 1px solid;
@@ -36,13 +36,14 @@ export const ValuesDebtContainer = styled.View`
   flex: 1;
   justify-content: space-between;
   width: 100%;
-  padding: 10px;
+  padding-top: 15px;
+  align-items: flex-end;
 `;
 
 export const ImageDebt = styled.Image`
   height: 50px;
-  width: 100px;
-  resize-mode: contain;
+  width: 80px;
+  resize-mode: cover;
 `;
 
 export const TextValuesContainer = styled.View``;
