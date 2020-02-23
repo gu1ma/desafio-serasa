@@ -25,13 +25,13 @@ export const CardTitle = styled.Text`
   margin-bottom: 5px;
 `;
 
-export const TextDebtDescription = styled.Text`
+export const TextCreditDescription = styled.Text`
   margin-top: 15px;
   font-size: 14px;
   color: #5c5e5c;
 `;
 
-export const ValuesDebtContainer = styled.View`
+export const ValuesCreditContainer = styled.View`
   flex-direction: row;
   flex: 1;
   justify-content: space-between;
@@ -39,7 +39,7 @@ export const ValuesDebtContainer = styled.View`
   padding: 10px;
 `;
 
-export const ImageDebt = styled.Image`
+export const ImageCredit = styled.Image`
   height: 50px;
   width: 100px;
   resize-mode: contain;
@@ -58,17 +58,17 @@ export const TextCreditValue = styled.Text`
   color: #5c5e5c;
 `;
 
-export const ButtonDebtContainer = styled.View`
+export const ButtonCreditContainer = styled.View`
   justify-content: center;
   align-items: center;
   width: 100%;
 `;
 
-export const ButtonDebt = styled.TouchableOpacity`
+export const ButtonCredit = styled.TouchableOpacity`
   margin: 10px;
 `;
 
-export const TextButtonDebt = styled.Text`
+export const TextButtonCredit = styled.Text`
   color: ${colors.buttons.purple};
   font-weight: bold;
 `;

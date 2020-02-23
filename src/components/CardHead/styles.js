@@ -22,6 +22,20 @@ export const UserPhoto = styled.Image`
   padding: 5px;
 `;
 
+export const OutlineCircle = styled.View`
+  margin-top: -140px;
+  height: 140px;
+  width: 140px;
+  border-radius: 70px;
+  border: ${colors.status.danger.dark} solid 5px;
+  padding: 5px;
+
+  border-right-color: transparent;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  transform: rotate(45deg);
+`;
+
 export const UserName = styled.Text`
   font-size: 18px;
   color: white;

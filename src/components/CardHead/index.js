@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Container, UserPhoto, UserName} from './styles';
+import {Container, UserPhoto, UserName, OutlineCircle} from './styles';
 
 export default function CardHead() {
   return (
@@ -11,6 +11,7 @@ export default function CardHead() {
             'https://lh3.googleusercontent.com/proxy/D1JxSESkKTdvobcGj8p-1yhdYI00IuQ26v7gRaej7-kifgZ8qzxqB0PIng5CyJuVMYJCqRplp2aV4Y4rQzTdrobHfmOOq8S2_kZJAQBm-Q1Sgh1qBcTJw04Ygb4555HNSA',
         }}
       />
+      <OutlineCircle />
       <UserName>Rick Sanchez</UserName>
     </Container>
   );
