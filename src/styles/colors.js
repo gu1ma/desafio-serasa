@@ -5,4 +5,10 @@ export default {
       dark: '#f77800',
     },
   },
+
+  buttons: {
+    purple: '#723696',
+  },
+  debt: '#d68100',
+  credit: '#007d79',
 };

@@ -2,19 +2,22 @@ import React from 'react';
 
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-import PointDescription from './PointsDescription';
+import ScoreDescription from './ScoreDescription';
+
+import colors from '~/styles/colors';
+
+import HorizontalLine from '~/components/HorizontalLine';
 
 import {
   Container,
   TextPoints,
   TextPointsDescription,
-  HorizontalLine,
   ButtonKnowMore,
   TextKnowMore,
   ContainerPointsDescription,
 } from './styles';
 
-export default function CardContainer() {
+export default function CardScore() {
   return (
     <Container>
       <TextPoints>26</TextPoints>
@@ -22,21 +25,22 @@ export default function CardContainer() {
       <HorizontalLine />
       <ButtonKnowMore>
         <TextKnowMore>
-          Saiba mais <Icon name="chevron-up" color="#723696" size={14} />
+          Saiba mais{' '}
+          <Icon name="chevron-up" color={colors.buttons.purple} size={14} />
         </TextKnowMore>
       </ButtonKnowMore>
       <ContainerPointsDescription>
-        <PointDescription
+        <ScoreDescription
           desc="0 a 30"
           colorStart="#e6602c"
           colorEnd="#b0b009"
         />
-        <PointDescription
+        <ScoreDescription
           desc="31 a 60"
           colorStart="#b0b009"
           colorEnd="#24bfc7"
         />
-        <PointDescription
+        <ScoreDescription
           desc="61 a 100"
           colorStart="#24bfc7"
           colorEnd="#0261a1"

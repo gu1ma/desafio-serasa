@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   margin-top: -50px;
+  padding: 20px;
   background: white;
   border-radius: 5px;
   border: #ccc 1px solid;
@@ -26,18 +27,12 @@ export const TextPoints = styled.Text`
 export const TextPointsDescription = styled.Text`
   font-size: 16px;
   color: #232423;
+  margin-bottom: 15px;
 `;
 
-export const HorizontalLine = styled.View`
-  height: 3px;
-  color: #ccc;
-  background: #ccc;
-  width: 90%;
-  margin-top: 20px;
-  margin-bottom: 20px;
+export const ButtonKnowMore = styled.TouchableOpacity`
+  margin-top: 15px;
 `;
-
-export const ButtonKnowMore = styled.TouchableOpacity``;
 
 export const TextKnowMore = styled.Text`
   font-size: 14px;

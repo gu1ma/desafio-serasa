@@ -23,7 +23,7 @@ export default createAppContainer(
         headerBackTitle: null,
       },
       mode: 'card',
-      headerLayoutPreset: 'center',
+      headerTitleAlign: 'center',
     }
   )
 );

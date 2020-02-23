@@ -10,8 +10,6 @@ export const Container = styled.View`
 
 export const TextPoint = styled.Text`
   font-size: 12px;
-  margin-left: 5px;
-  margin-right: 5px;
   margin-bottom: 10px;
   text-align: center;
   color: #686965;
@@ -23,6 +21,5 @@ export const Bar = styled(LinearGradient).attrs({
 })`
   height: 10px;
   background: red;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-right: 2px;
 `;
