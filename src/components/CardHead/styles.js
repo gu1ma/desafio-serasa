@@ -38,7 +38,7 @@ export const OutlineCircle = styled.View`
 `;
 
 export const UserName = styled.Text`
-  font-size: 18px;
+  font-size: 26px;
   color: white;
   font-weight: bold;
   margin-top: 15px;

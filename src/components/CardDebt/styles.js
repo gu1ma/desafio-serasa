@@ -64,11 +64,11 @@ export const ButtonDebtContainer = styled.View`
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-top: 25px;
+  margin-bottom: 15px;
 `;
 
-export const ButtonDebt = styled.TouchableOpacity`
-  margin: 10px;
-`;
+export const ButtonDebt = styled.TouchableOpacity``;
 
 export const TextButtonDebt = styled.Text`
   color: ${colors.buttons.purple};
