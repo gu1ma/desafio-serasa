@@ -2,17 +2,12 @@ import React from 'react';
 
 import {Container, UserPhoto, UserName, OutlineCircle} from './styles';
 
-export default function CardHead() {
+export default function CardHead({userData}) {
   return (
     <Container>
-      <UserPhoto
-        source={{
-          uri:
-            'https://lh3.googleusercontent.com/proxy/D1JxSESkKTdvobcGj8p-1yhdYI00IuQ26v7gRaej7-kifgZ8qzxqB0PIng5CyJuVMYJCqRplp2aV4Y4rQzTdrobHfmOOq8S2_kZJAQBm-Q1Sgh1qBcTJw04Ygb4555HNSA',
-        }}
-      />
+      <UserPhoto source={userData.userPhoto} />
       <OutlineCircle />
-      <UserName>Rick Sanchez</UserName>
+      <UserName>{userData.userName}</UserName>
     </Container>
   );
 }

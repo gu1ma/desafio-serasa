@@ -27,13 +27,14 @@ export const OutlineCircle = styled.View`
   height: 140px;
   width: 140px;
   border-radius: 70px;
-  border: ${colors.status.danger.dark} solid 5px;
+  border: transparent solid 5px;
   padding: 5px;
 
   border-right-color: transparent;
-  border-top-color: transparent;
+  border-top-color: ${colors.status.danger.dark};
   border-bottom-color: transparent;
-  transform: rotate(45deg);
+  border-left-color: transparent;
+  transform: rotate(-45deg);
 `;
 
 export const UserName = styled.Text`
