@@ -15,6 +15,11 @@ export default createAppContainer(
         headerStyle: {
           backgroundColor: '#f77800',
           shadowColor: 'transparent',
+          shadowOpacity: 0,
+          shadowOffset: {
+            height: 0,
+          },
+          elevation: 0,
         },
         headerTintColor: 'white',
         headerTitleStyle: {
