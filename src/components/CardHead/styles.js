@@ -18,7 +18,6 @@ export const UserPhoto = styled.Image`
   height: 140px;
   width: 140px;
   border-radius: 70px;
-  border: white solid 5px;
   padding: 5px;
 `;
 

@@ -15,7 +15,7 @@ export default function main(state = INITIAL_STATE, action) {
       }
       case '@main/GET_USER_DATA_SUCCESS': {
         draft.loading = false;
-        draft.userData = action.payload;
+        draft.userData = action.payload.userData;
         draft.error = false;
         break;
       }
