@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import {Container} from './styles';
 
 import CardHead from '~/components/CardHead';
@@ -54,6 +55,9 @@ export default function Main() {
       },
     ],
   });
+
+  const data = useSelector(state => state.main);
+  console.warn('data', data);
 
   return (
     <Container>
