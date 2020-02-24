@@ -19,8 +19,8 @@ import colors from '~/styles/colors';
 
 import HorizontalLine from '~/components/HorizontalLine';
 
-export default function CardDebt() {
-  return (
+export default function CardDebt({debtData}) {
+  return debtData ? (
     <Container>
       <CardTitle>
         <Icon name="file-alt" color={colors.debt} size={18} /> Negocie suas
@@ -29,14 +29,10 @@ export default function CardDebt() {
       <HorizontalLine />
       <TextDebtDescription>Você possuí uma pendência com</TextDebtDescription>
       <ValuesDebtContainer>
-        <ImageDebt
-          source={{
-            uri: 'https://i.ya-webdesign.com/images/xbox-one-icon-png-2.png',
-          }}
-        />
+        <ImageDebt source={debtData.uriImgDebt} />
         <TextValuesContainer>
-          <TextDebtOldValue>R$280,00</TextDebtOldValue>
-          <TextDebtNewValue>por R$79,90</TextDebtNewValue>
+          <TextDebtOldValue>{debtData.oldValue}</TextDebtOldValue>
+          <TextDebtNewValue>{debtData.newValue}</TextDebtNewValue>
         </TextValuesContainer>
       </ValuesDebtContainer>
       <ButtonDebtContainer>
@@ -45,5 +41,7 @@ export default function CardDebt() {
         </ButtonDebt>
       </ButtonDebtContainer>
     </Container>
+  ) : (
+    <></>
   );
 }

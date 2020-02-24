@@ -19,8 +19,8 @@ import colors from '~/styles/colors';
 
 import HorizontalLine from '~/components/HorizontalLine';
 
-export default function CardCredit() {
-  return (
+export default function CardCredit({creditData}) {
+  return creditData ? (
     <Container>
       <CardTitle>
         <Icon name="credit-card" color={colors.credit} size={18} /> Propostas de
@@ -31,12 +31,7 @@ export default function CardCredit() {
         Encontramos uma oferta de cartão de crédito
       </TextCreditDescription>
       <ValuesCreditContainer>
-        <ImageCredit
-          source={{
-            uri:
-              'https://vignette.wikia.nocookie.net/yugioh/images/6/68/Face_Down_Defense_Position.png/revision/latest?cb=20100726091546',
-          }}
-        />
+        <ImageCredit source={creditData.uriImgCredit} />
         <TextValuesContainer>
           <TextCreditDesciption>Anuidade Grátis</TextCreditDesciption>
           <TextCreditValue>Limite de R$2.000,00</TextCreditValue>
@@ -48,5 +43,7 @@ export default function CardCredit() {
         </ButtonCredit>
       </ButtonCreditContainer>
     </Container>
+  ) : (
+    <></>
   );
 }
