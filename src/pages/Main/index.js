@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useMemo} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {StatusBar} from 'react-native';
 import {Container} from './styles';
@@ -7,6 +7,7 @@ import CardHead from '~/components/CardHead';
 import CardScore from '~/components/CardScore';
 import CardDebt from '~/components/CardDebt';
 import CardCredit from '~/components/CardCredit';
+import CardProtectionPlain from '~/components/CardProtectionPlain';
 
 import {getUserDataRequest} from '~/store/modules/main/actions';
 
@@ -64,6 +65,10 @@ export default function Main() {
 
           {userData.creditData.map(credit => (
             <CardCredit creditData={credit} key={credit.id} />
+          ))}
+
+          {userData.protectionPlainData.map(plain => (
+            <CardProtectionPlain protectionPlainData={plain} key={plain.id} />
           ))}
         </Container>
       </>

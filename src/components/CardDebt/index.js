@@ -42,8 +42,7 @@ export default function CardDebt({debtData}) {
           text: 'CONFIRMAR',
           onPress: () => dispatch(payDebtRequest(score, debtData.id)),
         },
-      ],
-      {cancelable: true}
+      ]
     );
   }
 

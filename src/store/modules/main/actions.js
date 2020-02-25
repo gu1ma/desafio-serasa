@@ -33,11 +33,19 @@ export function payDebtSuccess(
   id,
   scoreDescription,
   scoreLevel,
-  creditData
+  creditData,
+  protectionPlainData
 ) {
   return {
     type: '@main/PAY_DEBT_SUCCESS',
-    payload: {newScoreValue, id, scoreDescription, scoreLevel, creditData},
+    payload: {
+      newScoreValue,
+      id,
+      scoreDescription,
+      scoreLevel,
+      creditData,
+      protectionPlainData,
+    },
   };
 }
 
@@ -49,23 +57,67 @@ export function payDebtError() {
 }
 
 // Accept credit
-export function acceptCreditRequest(scoreValue) {
+export function acceptCreditRequest(scoreValue, id) {
   return {
     type: '@main/ACCEPT_CREDIT_REQUEST',
-    payload: {scoreValue},
+    payload: {scoreValue, id},
   };
 }
 
-export function acceptCreditSuccess(newScoreValue) {
+export function acceptCreditSuccess(
+  newScoreValue,
+  id,
+  scoreDescription,
+  scoreLevel,
+  protectionPlainData
+) {
   return {
     type: '@main/ACCEPT_CREDIT_SUCCESS',
-    payload: {newScoreValue},
+    payload: {
+      newScoreValue,
+      id,
+      scoreDescription,
+      scoreLevel,
+      protectionPlainData,
+    },
   };
 }
 
 export function acceptCreditError() {
   return {
     type: '@main/ACCEPT_CREDIT_ERROR',
+    payload: {},
+  };
+}
+
+// Accept protection plain
+export function acceptProtectionPlainRequest(scoreValue, id) {
+  return {
+    type: '@main/ACCEPT_PROTECTION_PLAIN_REQUEST',
+    payload: {scoreValue, id},
+  };
+}
+
+export function acceptProtectionPlainSuccess(
+  newScoreValue,
+  id,
+  scoreDescription,
+  scoreLevel
+) {
+  return {
+    type: '@main/ACCEPT_PROTECTION_PLAIN_SUCCESS',
+    payload: {
+      newScoreValue,
+      id,
+      scoreDescription,
+      scoreLevel,
+    },
+  };
+}
+
+export function acceptProtectionPlainError() {
+  return {
+    type: '@main/ACCEPT_PROTECTION_PLAIN_ERROR',
     payload: {},
   };
 }

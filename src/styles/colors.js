@@ -19,4 +19,5 @@ export default {
   },
   debt: '#d68100',
   credit: '#007d79',
+  protectPlain: '#083C44',
 };
