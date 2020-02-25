@@ -1,11 +1,7 @@
 import styled from 'styled-components/native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import colors from '~/styles/colors';
-
-export const Container = styled(LinearGradient).attrs({
-  colors: [colors.status.danger.dark, colors.status.danger.light],
-})`
+export const Container = styled(LinearGradient)`
   justify-content: center;
   align-items: center;
   padding-top: 20px;
@@ -29,10 +25,14 @@ export const OutlineCircle = styled.View`
   border: transparent solid 5px;
   padding: 5px;
 
-  border-right-color: transparent;
-  border-top-color: ${colors.status.danger.dark};
-  border-bottom-color: transparent;
-  border-left-color: transparent;
+  border-top-color: ${props => props.colorBorder};
+  border-left-color: ${props =>
+    props.userLevel > 0 ? props.colorBorder : 'transparent'};
+  border-bottom-color: ${props =>
+    props.userLevel > 1 ? props.colorBorder : 'transparent'};
+  border-right-color: ${props =>
+    props.userLevel > 2 ? props.colorBorder : 'transparent'};
+
   transform: rotate(-45deg);
 `;
 

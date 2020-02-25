@@ -1,6 +1,9 @@
 import React from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import {payDebtRequest} from '~/store/modules/main/actions';
+
 import {
   Container,
   CardTitle,
@@ -20,6 +23,14 @@ import colors from '~/styles/colors';
 import HorizontalLine from '~/components/HorizontalLine';
 
 export default function CardDebt({debtData}) {
+  const dispatch = useDispatch();
+
+  const score = useSelector(state => state.main.userData.score);
+
+  function handlePayDebt() {
+    dispatch(payDebtRequest(score, debtData.id));
+  }
+
   return debtData ? (
     <Container>
       <CardTitle>
@@ -36,7 +47,7 @@ export default function CardDebt({debtData}) {
         </TextValuesContainer>
       </ValuesDebtContainer>
       <ButtonDebtContainer>
-        <ButtonDebt>
+        <ButtonDebt onPress={handlePayDebt}>
           <TextButtonDebt>Negociar agora</TextButtonDebt>
         </ButtonDebt>
       </ButtonDebtContainer>

@@ -25,6 +25,28 @@ export default function main(state = INITIAL_STATE, action) {
         draft.error = true;
         break;
       }
+
+      case '@main/@main/PAY_DEBT_REQUEST': {
+        draft.loading = true;
+        break;
+      }
+      case '@main/PAY_DEBT_SUCCESS': {
+        draft.loading = false;
+        draft.userData.scoreDescription = action.payload.scoreDescription;
+        draft.userData.scoreLevel = action.payload.scoreLevel;
+        draft.userData.score = action.payload.newScoreValue;
+        draft.userData.debtData = draft.userData.debtData.filter(el => {
+          return el.id !== action.payload.id;
+        });
+        draft.error = false;
+        break;
+      }
+      case '@main/PAY_DEBT_ERROR': {
+        draft.loading = false;
+        draft.error = true;
+        break;
+      }
+
       default:
     }
   });

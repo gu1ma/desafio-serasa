@@ -3,17 +3,22 @@ import {createStackNavigator} from 'react-navigation-stack';
 
 import Main from '~/pages/Main';
 
+import colors from '~/styles/colors';
+
 export default createAppContainer(
   createStackNavigator(
     {
-      Main,
+      Main: {
+        screen: Main,
+      },
     },
     {
       initialRouteName: 'Main',
       defaultNavigationOptions: {
+        header: false,
         headerTitle: '',
         headerStyle: {
-          backgroundColor: '#f77800',
+          backgroundColor: colors.status.danger.dark,
           shadowColor: 'transparent',
           shadowOpacity: 0,
           shadowOffset: {
