@@ -1,4 +1,5 @@
 import React from 'react';
+import {Alert} from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {
@@ -20,6 +21,25 @@ import colors from '~/styles/colors';
 import HorizontalLine from '~/components/HorizontalLine';
 
 export default function CardCredit({creditData}) {
+  function handleCredit() {
+    Alert.alert(
+      'Olá!',
+      'Encontramos uma nova proposta de credito pra você! Clique em confirmar para aceitar.',
+      [
+        {
+          text: 'Cancel',
+          onPress: () => console.log('Cancel Pressed'),
+          style: 'cancel',
+        },
+        {
+          text: 'CONFIRMAR',
+          onPress: () => console.log('Confirmar presssed'),
+        },
+      ],
+      {cancelable: true}
+    );
+  }
+
   return creditData ? (
     <Container>
       <CardTitle>
@@ -38,7 +58,7 @@ export default function CardCredit({creditData}) {
         </TextValuesContainer>
       </ValuesCreditContainer>
       <ButtonCreditContainer>
-        <ButtonCredit>
+        <ButtonCredit onPress={handleCredit}>
           <TextButtonCredit>Ver oferta</TextButtonCredit>
         </ButtonCredit>
       </ButtonCreditContainer>

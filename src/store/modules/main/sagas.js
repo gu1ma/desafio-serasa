@@ -1,5 +1,7 @@
 import {all, takeLatest, call, put} from 'redux-saga/effects';
 
+import {Alert} from 'react-native';
+
 import {
   getUserDataSuccess,
   getUserDataError,
@@ -73,6 +75,8 @@ export function* payDebt({payload}) {
         creditDesc: 'Anuidade Grátis',
         creditValue: 'Limite de R$2.000,00',
       };
+
+      Alert.alert('Parabéns!', 'Você recebeu uma nova proposta de crédito!');
     }
 
     if (newScoreValue >= 60) {

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Alert} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -28,7 +29,22 @@ export default function CardDebt({debtData}) {
   const score = useSelector(state => state.main.userData.score);
 
   function handlePayDebt() {
-    dispatch(payDebtRequest(score, debtData.id));
+    Alert.alert(
+      'Quase lá!',
+      'Clique em confirmar para efetuar o pagamento da sua conta!',
+      [
+        {
+          text: 'Cancel',
+          onPress: () => console.log('Cancel Pressed'),
+          style: 'cancel',
+        },
+        {
+          text: 'CONFIRMAR',
+          onPress: () => dispatch(payDebtRequest(score, debtData.id)),
+        },
+      ],
+      {cancelable: true}
+    );
   }
 
   return debtData ? (
