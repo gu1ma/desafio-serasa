@@ -38,6 +38,9 @@ export default function main(state = INITIAL_STATE, action) {
         draft.userData.debtData = draft.userData.debtData.filter(el => {
           return el.id !== action.payload.id;
         });
+        if (action.payload.creditData !== null) {
+          draft.userData.creditData.push(action.payload.creditData);
+        }
         draft.error = false;
         break;
       }

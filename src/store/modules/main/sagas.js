@@ -41,14 +41,6 @@ export function* getUserData() {
             oldValue: 'R$280,00',
             newValue: 'por R$79,90',
           },
-          {
-            id: 3,
-            uriImgDebt: {
-              uri: 'https://i.ya-webdesign.com/images/xbox-one-icon-png-2.png',
-            },
-            oldValue: 'R$280,00',
-            newValue: 'por R$79,90',
-          },
         ],
         creditData: [],
       },
@@ -67,18 +59,37 @@ export function* payDebt({payload}) {
 
     let scoreDescription = 'Sua pontuação é baixa';
     let scoreLevel = 0;
+    let creditData = null;
 
-    if (newScoreValue >= 30) {
+    if (newScoreValue >= 30 && newScoreValue < 60) {
       scoreDescription = 'Sua pontuação é média';
       scoreLevel = 1;
+      creditData = {
+        id: 1,
+        uriImgCredit: {
+          uri:
+            'https://vignette.wikia.nocookie.net/yugioh/images/6/68/Face_Down_Defense_Position.png/revision/latest?cb=20100726091546',
+        },
+        creditDesc: 'Anuidade Grátis',
+        creditValue: 'Limite de R$2.000,00',
+      };
     }
 
     if (newScoreValue >= 60) {
       scoreDescription = 'Sua pontuação é alta';
       scoreLevel = 2;
+      creditData = null;
     }
 
-    yield put(payDebtSuccess(newScoreValue, id, scoreDescription, scoreLevel));
+    yield put(
+      payDebtSuccess(
+        newScoreValue,
+        id,
+        scoreDescription,
+        scoreLevel,
+        creditData
+      )
+    );
   } catch (error) {
     yield put(payDebtError());
   }

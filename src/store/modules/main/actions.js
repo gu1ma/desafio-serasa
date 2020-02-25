@@ -32,11 +32,12 @@ export function payDebtSuccess(
   newScoreValue,
   id,
   scoreDescription,
-  scoreLevel
+  scoreLevel,
+  creditData
 ) {
   return {
     type: '@main/PAY_DEBT_SUCCESS',
-    payload: {newScoreValue, id, scoreDescription, scoreLevel},
+    payload: {newScoreValue, id, scoreDescription, scoreLevel, creditData},
   };
 }
 

@@ -33,8 +33,8 @@ export default function CardCredit({creditData}) {
       <ValuesCreditContainer>
         <ImageCredit source={creditData.uriImgCredit} />
         <TextValuesContainer>
-          <TextCreditDesciption>Anuidade Grátis</TextCreditDesciption>
-          <TextCreditValue>Limite de R$2.000,00</TextCreditValue>
+          <TextCreditDesciption>{creditData.creditDesc}</TextCreditDesciption>
+          <TextCreditValue>{creditData.creditValue}</TextCreditValue>
         </TextValuesContainer>
       </ValuesCreditContainer>
       <ButtonCreditContainer>

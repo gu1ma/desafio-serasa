@@ -34,7 +34,6 @@ export const TextCreditDescription = styled.Text`
 
 export const ValuesCreditContainer = styled.View`
   flex-direction: row;
-  flex: 1;
   justify-content: space-between;
   width: 100%;
   padding-top: 15px;
