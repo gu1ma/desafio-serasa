@@ -1,5 +1,7 @@
 import styled from 'styled-components/native';
 
+import AnimateNumber from 'react-native-animate-number';
+
 export const Container = styled.View`
   margin-top: -50px;
   padding: 20px;
@@ -17,7 +19,7 @@ export const Container = styled.View`
   align-items: center;
 `;
 
-export const TextPoints = styled.Text`
+export const TextPoints = styled(AnimateNumber)`
   font-size: 42px;
   color: #5c5e5c;
   font-weight: bold;

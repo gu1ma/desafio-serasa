@@ -21,7 +21,9 @@ export default function CardScore({userData}) {
   return (
     userData && (
       <Container>
-        <TextPoints>{userData.score}</TextPoints>
+        <TextPoints value={userData.score} countBy={1}>
+          {userData.score}
+        </TextPoints>
         <TextPointsDescription>
           {userData.scoreDescription}
         </TextPointsDescription>
