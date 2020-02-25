@@ -2,7 +2,7 @@ import React from 'react';
 import {Alert} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 
-import Icon from 'react-native-vector-icons/FontAwesome5';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import {
   Container,
@@ -53,7 +53,7 @@ export default function CardProtectionPlain({protectionPlainData}) {
   return protectionPlainData ? (
     <Container>
       <CardTitle>
-        <Icon name="file-alt" color={colors.protectPlain} size={18} />
+        <Icon name="security" color={colors.protectPlain} size={18} />
         {` ${protectionPlainData.cardTitle}`}
       </CardTitle>
       <HorizontalLine />

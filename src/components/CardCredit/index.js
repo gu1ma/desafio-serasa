@@ -34,7 +34,7 @@ export default function CardCredit({creditData}) {
       'Encontramos uma nova proposta de credito pra você! Clique em confirmar para aceitar.',
       [
         {
-          text: 'Cancel',
+          text: 'CANCELAR',
           onPress: () => console.log('Cancel Pressed'),
           style: 'cancel',
         },

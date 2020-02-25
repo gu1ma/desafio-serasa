@@ -34,7 +34,7 @@ export default function CardDebt({debtData}) {
       'Clique em confirmar para efetuar o pagamento da sua conta!',
       [
         {
-          text: 'Cancel',
+          text: 'CANCELAR',
           onPress: () => console.log('Cancel Pressed'),
           style: 'cancel',
         },
