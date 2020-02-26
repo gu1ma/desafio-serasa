@@ -1,5 +1,6 @@
 import React from 'react';
-import {Container, UserPhoto, UserName, OutlineCircle} from './styles';
+import ProgressCircle from 'react-native-progress-circle';
+import {Container, UserPhoto, UserName} from './styles';
 
 export default function CardHead({
   userData,
@@ -9,11 +10,14 @@ export default function CardHead({
 }) {
   return (
     <Container colors={[initialColor, finalColor]}>
-      <UserPhoto source={userData.userPhoto} />
-      <OutlineCircle
-        userLevel={userData.scoreLevel}
-        colorBorder={borderColor}
-      />
+      <ProgressCircle
+        borderWidth={5}
+        percent={100 - userData.score}
+        shadowColor={borderColor}
+        radius={70}
+        color="#fff">
+        <UserPhoto source={userData.userPhoto} />
+      </ProgressCircle>
       <UserName>{userData.userName}</UserName>
     </Container>
   );
