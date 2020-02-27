@@ -13,48 +13,14 @@ import {
   acceptProtectionPlainError,
 } from '~/store/modules/main/actions';
 
-// import api from '~/services/api';
+import api from '~/services/api';
 
 export function* getUserData() {
   try {
-    // aqui vira a req a futura api
-    // const response = yield call(api.put, 'users', profile);
-    const response = {
-      data: {
-        userName: 'Rick Sanches',
-        userPhoto: {
-          uri:
-            'https://i.pinimg.com/originals/e6/22/d2/e622d2fdccb6fdf31133dd7ab273892a.jpg',
-        },
-        score: 25,
-        scoreDescription: 'Sua pontuação é baixa',
-        scoreStatus: 'low',
-        scoreLevel: 0,
-        debtData: [
-          {
-            id: 1,
-            uriImgDebt: {
-              uri: 'https://i.ya-webdesign.com/images/xbox-one-icon-png-2.png',
-            },
-            oldValue: 'R$280,00',
-            newValue: 'por R$79,90',
-          },
-          {
-            id: 2,
-            uriImgDebt: {
-              uri: 'https://i.ya-webdesign.com/images/xbox-one-icon-png-2.png',
-            },
-            oldValue: 'R$280,00',
-            newValue: 'por R$79,90',
-          },
-        ],
-        creditData: [],
-        protectionPlainData: [],
-      },
-    };
-
-    yield put(getUserDataSuccess(response.data));
+    const {data} = yield call(api.get, 'get-user-data');
+    yield put(getUserDataSuccess(data));
   } catch (error) {
+    Alert.alert('Erro!', 'Houve algum erro ao buscar os dados do usuário!');
     yield put(getUserDataError());
   }
 }
@@ -62,67 +28,22 @@ export function* getUserData() {
 export function* payDebt({payload}) {
   try {
     const {scoreValue, id} = payload;
-    const upScore = 25;
-    const newScoreValue =
-      scoreValue + upScore >= 100 ? 100 : scoreValue + upScore;
 
-    let scoreDescription = 'Sua pontuação é baixa';
-    let scoreLevel = 0;
-    let creditData = null;
-    let protectionPlainData = null;
+    const {data} = yield call(api.post, 'pay-debt', {scoreValue});
 
-    if (newScoreValue >= 30 && newScoreValue < 60) {
-      scoreDescription = 'Sua pontuação é média';
-      scoreLevel = 1;
-      creditData = {
-        id: 1,
-        uriImgCredit: {
-          uri:
-            'https://vignette.wikia.nocookie.net/yugioh/images/6/68/Face_Down_Defense_Position.png/revision/latest?cb=20100726091546',
-        },
-        cardTitle: 'Proposta de crédito',
-        creditTitle: 'Encontramos uma oferta de cartão de crédito',
-        creditDesc: 'Anuidade Grátis',
-        creditValue: 'Limite de R$2.000,00',
-      };
+    const {
+      newScoreValue,
+      scoreDescription,
+      scoreLevel,
+      creditData,
+      protectionPlainData,
+    } = data;
 
+    if (creditData) {
       Alert.alert('Parabéns!', 'Você recebeu uma nova proposta de crédito!');
     }
 
-    if (newScoreValue > 50) {
-      protectionPlainData = {
-        id: 1,
-        cardTitle: 'Proteja seus dados',
-        cardDescription: 'Temos uma oferta de proteção de dados pra você!',
-        uriImgCardProtection: {
-          uri:
-            'https://st2.depositphotos.com/5394392/12199/v/950/depositphotos_121997332-stock-illustration-shield-protection-icon-defense-equipment.jpg',
-        },
-        oldValue: '',
-        newValue: 'por R$99,90/mês',
-      };
-    }
-
-    if (newScoreValue >= 60) {
-      scoreDescription = 'Sua pontuação é alta';
-      scoreLevel = 2;
-      creditData = null;
-    }
-
-    if (newScoreValue >= 90) {
-      scoreLevel = 3;
-      protectionPlainData = {
-        id: 1,
-        cardTitle: 'Proteja seus dados',
-        cardDescription: 'Temos uma oferta de proteção de dados pra você!',
-        uriImgCardProtection: {
-          uri:
-            'https://st2.depositphotos.com/5394392/12199/v/950/depositphotos_121997332-stock-illustration-shield-protection-icon-defense-equipment.jpg',
-        },
-        oldValue: 'de R$99,90/mês',
-        newValue: 'por R$59,90/mês',
-      };
-
+    if (newScoreValue > 90) {
       Alert.alert(
         'Parabéns!',
         'Você recebeu um desconto no monitoramento dos seus dados!'
@@ -140,6 +61,7 @@ export function* payDebt({payload}) {
       )
     );
   } catch (error) {
+    Alert.alert('Erro!', 'Houve algum erro ao executar a ação!');
     yield put(payDebtError());
   }
 }
@@ -147,53 +69,17 @@ export function* payDebt({payload}) {
 export function* acceptCredit({payload}) {
   try {
     const {scoreValue, id} = payload;
-    const upScore = 20;
-    const newScoreValue =
-      scoreValue + upScore >= 100 ? 100 : scoreValue + upScore;
 
-    let protectionPlainData = null;
+    const {data} = yield call(api.post, 'accept-credit', {scoreValue});
 
-    let scoreDescription = 'Sua pontuação é baixa';
-    let scoreLevel = 0;
+    const {
+      newScoreValue,
+      scoreDescription,
+      scoreLevel,
+      protectionPlainData,
+    } = data;
 
-    if (newScoreValue >= 30 && newScoreValue < 60) {
-      scoreDescription = 'Sua pontuação é média';
-      scoreLevel = 1;
-    }
-
-    if (newScoreValue >= 60) {
-      scoreDescription = 'Sua pontuação é alta';
-      scoreLevel = 2;
-    }
-
-    if (newScoreValue > 50) {
-      protectionPlainData = {
-        id: 1,
-        cardTitle: 'Proteja seus dados',
-        cardDescription: 'Temos uma oferta de proteção de dados pra você!',
-        uriImgCardProtection: {
-          uri:
-            'https://st2.depositphotos.com/5394392/12199/v/950/depositphotos_121997332-stock-illustration-shield-protection-icon-defense-equipment.jpg',
-        },
-        oldValue: '',
-        newValue: 'por R$99,90/mês',
-      };
-    }
-
-    if (newScoreValue >= 90) {
-      scoreLevel = 3;
-      protectionPlainData = {
-        id: 1,
-        cardTitle: 'Proteja seus dados',
-        cardDescription: 'Temos uma oferta de proteção de dados pra você!',
-        uriImgCardProtection: {
-          uri:
-            'https://st2.depositphotos.com/5394392/12199/v/950/depositphotos_121997332-stock-illustration-shield-protection-icon-defense-equipment.jpg',
-        },
-        oldValue: 'de R$99,90/mês',
-        newValue: 'por R$59,90/mês',
-      };
-
+    if (newScoreValue > 90) {
       Alert.alert(
         'Parabéns!',
         'Você recebeu um desconto no monitoramento dos seus dados!'
@@ -210,6 +96,7 @@ export function* acceptCredit({payload}) {
       )
     );
   } catch (error) {
+    Alert.alert('Erro!', 'Houve algum erro ao executar a ação!');
     yield put(acceptCreditError());
   }
 }
@@ -217,26 +104,12 @@ export function* acceptCredit({payload}) {
 export function* acceptProtectionPlain({payload}) {
   try {
     const {scoreValue, id} = payload;
-    const upScore = 10;
-    const newScoreValue =
-      scoreValue + upScore >= 100 ? 100 : scoreValue + upScore;
 
-    let scoreDescription = 'Sua pontuação é baixa';
-    let scoreLevel = 0;
+    const {data} = yield call(api.post, 'accept-protection-plain', {
+      scoreValue,
+    });
 
-    if (newScoreValue >= 30 && newScoreValue < 60) {
-      scoreDescription = 'Sua pontuação é média';
-      scoreLevel = 1;
-    }
-
-    if (newScoreValue >= 60) {
-      scoreDescription = 'Sua pontuação é alta';
-      scoreLevel = 2;
-    }
-
-    if (newScoreValue >= 90) {
-      scoreLevel = 3;
-    }
+    const {newScoreValue, scoreDescription, scoreLevel} = data;
 
     yield put(
       acceptProtectionPlainSuccess(
@@ -247,6 +120,7 @@ export function* acceptProtectionPlain({payload}) {
       )
     );
   } catch (error) {
+    Alert.alert('Erro!', 'Houve algum erro ao executar a ação!');
     yield put(acceptProtectionPlainError());
   }
 }
