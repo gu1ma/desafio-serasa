@@ -1,7 +1,7 @@
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 
-import Main from '~/pages/Main';
+import Main, {MainNavigationOptions} from '~/pages/Main';
 
 import colors from '~/styles/colors';
 
@@ -10,12 +10,12 @@ export default createAppContainer(
     {
       Main: {
         screen: Main,
+        navigationOptions: MainNavigationOptions,
       },
     },
     {
       initialRouteName: 'Main',
       defaultNavigationOptions: {
-        header: false,
         headerTitle: '',
         headerStyle: {
           backgroundColor: colors.status.danger.dark,

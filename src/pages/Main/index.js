@@ -13,7 +13,24 @@ import {getUserDataRequest} from '~/store/modules/main/actions';
 
 import colors from '~/styles/colors';
 
-export default function Main() {
+export function MainNavigationOptions({navigation}) {
+  return {
+    headerStyle: {
+      backgroundColor: navigation.getParam(
+        'toolbarColor',
+        colors.status.danger.dark
+      ),
+      shadowColor: 'transparent',
+      shadowOpacity: 0,
+      shadowOffset: {
+        height: 0,
+      },
+      elevation: 0,
+    },
+  };
+}
+
+export default function Main({navigation}) {
   const {userData} = useSelector(state => state.main);
 
   const dispatch = useDispatch();
@@ -30,16 +47,19 @@ export default function Main() {
     if (userData !== null) {
       if (userData.scoreLevel === 0) {
         setBorderColor(colors.status.danger.dark);
+        navigation.setParams({toolbarColor: colors.status.danger.dark});
         setInitialColor(colors.status.danger.dark);
         setFinalColor(colors.status.danger.light);
       }
       if (userData.scoreLevel === 1) {
         setBorderColor(colors.status.medium.dark);
+        navigation.setParams({toolbarColor: colors.status.medium.dark});
         setInitialColor(colors.status.medium.dark);
         setFinalColor(colors.status.medium.light);
       }
       if (userData.scoreLevel === 2) {
         setBorderColor(colors.status.high.dark);
+        navigation.setParams({toolbarColor: colors.status.high.dark});
         setInitialColor(colors.status.high.dark);
         setFinalColor(colors.status.high.light);
       }
