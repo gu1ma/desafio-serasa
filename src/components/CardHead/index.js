@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ProgressCircle from 'react-native-progress-circle';
 import {Container, UserPhoto, UserName} from './styles';
 
@@ -22,3 +23,10 @@ export default function CardHead({
     </Container>
   );
 }
+
+CardHead.propTypes = {
+  userData: PropTypes.object,
+  initialColor: PropTypes.string,
+  finalColor: PropTypes.string,
+  borderColor: PropTypes.string,
+};

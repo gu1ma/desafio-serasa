@@ -10,3 +10,9 @@ export default function ScoreDescription({desc, colorStart, colorEnd}) {
     </Container>
   );
 }
+
+ScoreDescription.propTypes = {
+  desc: PropTypes.string,
+  colorStart: PropTypes.string,
+  colorEnd: PropTypes.string,
+};

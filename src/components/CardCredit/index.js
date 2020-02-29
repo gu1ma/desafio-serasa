@@ -71,3 +71,7 @@ export default function CardCredit({creditData}) {
     <></>
   );
 }
+
+CardCredit.propTypes = {
+  creditData: PropTypes.object,
+};

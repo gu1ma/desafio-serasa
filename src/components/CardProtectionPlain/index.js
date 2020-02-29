@@ -83,3 +83,7 @@ export default function CardProtectionPlain({protectionPlainData}) {
     <></>
   );
 }
+
+CardProtectionPlain.propTypes = {
+  protectionPlainData: PropTypes.object,
+};
