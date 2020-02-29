@@ -16,9 +16,9 @@ export default function CardHead({
         shadowColor={borderColor}
         radius={70}
         color="#fff">
-        <UserPhoto source={userData.userPhoto} />
+        <UserPhoto testID="userphoto" source={userData.userPhoto} />
       </ProgressCircle>
-      <UserName>{userData.userName}</UserName>
+      <UserName testID="username">{userData.userName}</UserName>
     </Container>
   );
 }
