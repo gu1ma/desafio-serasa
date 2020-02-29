@@ -2,6 +2,8 @@ import React from 'react';
 
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
+import PropTypes from 'prop-types';
+
 import ScoreDescription from './ScoreDescription';
 
 import colors from '~/styles/colors';
