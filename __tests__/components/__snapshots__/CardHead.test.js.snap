@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardHead Should render correctly 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      undefined,
+      undefined,
+    ]
+  }
+  endPoint={
+    Object {
+      "x": 0.5,
+      "y": 1,
+    }
+  }
+  locations={null}
+  startPoint={
+    Object {
+      "x": 0.5,
+      "y": 0,
+    }
+  }
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "paddingBottom": 80,
+        "paddingLeft": 30,
+        "paddingRight": 30,
+        "paddingTop": 20,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        },
+        Object {
+          "backgroundColor": "#999",
+          "borderRadius": 70,
+          "height": 140,
+          "width": 140,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "left": 0,
+            "position": "absolute",
+            "top": 0,
+          },
+          Object {
+            "height": 140,
+            "width": 70,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "borderBottomRightRadius": 0,
+              "borderTopRightRadius": 0,
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+            },
+            Object {
+              "backgroundColor": "#fff",
+              "borderRadius": 70,
+              "height": 140,
+              "overflow": "hidden",
+              "transform": Array [
+                Object {
+                  "translateX": 35,
+                },
+                Object {
+                  "rotate": "180deg",
+                },
+                Object {
+                  "translateX": -35,
+                },
+              ],
+              "width": 70,
+            },
+          ]
+        }
+      />
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "left": 0,
+            "position": "absolute",
+            "top": 0,
+          },
+          Object {
+            "height": 140,
+            "width": 70,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "borderBottomRightRadius": 0,
+              "borderTopRightRadius": 0,
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+            },
+            Object {
+              "backgroundColor": "#fff",
+              "borderRadius": 70,
+              "height": 140,
+              "overflow": "hidden",
+              "transform": Array [
+                Object {
+                  "translateX": 35,
+                },
+                Object {
+                  "rotate": "270deg",
+                },
+                Object {
+                  "translateX": -35,
+                },
+              ],
+              "width": 70,
+            },
+          ]
+        }
+      />
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "justifyContent": "center",
+            "overflow": "hidden",
+          },
+          Object {
+            "backgroundColor": "#e9e9ef",
+            "borderRadius": 65,
+            "height": 130,
+            "width": 130,
+          },
+        ]
+      }
+    >
+      <Image
+        source={
+          Object {
+            "uri": "https://i.pinimg.com/originals/e6/22/d2/e622d2fdccb6fdf31133dd7ab273892a.jpg",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "borderRadius": 70,
+              "height": 140,
+              "paddingBottom": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+              "paddingTop": 5,
+              "width": 140,
+            },
+          ]
+        }
+      />
+    </View>
+  </View>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "white",
+          "fontSize": 26,
+          "fontWeight": "bold",
+          "marginTop": 15,
+        },
+      ]
+    }
+  >
+    Rick Sanches
+  </Text>
+</BVLinearGradient>
+`;
