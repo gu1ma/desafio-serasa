@@ -1,6 +1,9 @@
 # Desafio serasa!
 Este repositório contém os dados da aplicação do desfio Serasa! Esta aplicação foi desenvolvida em [__React Native__](https://reactnative.dev/)
 utilizando a arquitetura Flux para a gerência de estados dos componentes.
+
+![serasagif](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa.gif)
+
 ### Iniciando
 Siga as instruções para executar o projeto no seu ambiente de desenvolvimento.
 
