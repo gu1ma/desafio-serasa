@@ -28,12 +28,11 @@ export default function main(state = INITIAL_STATE, action) {
       }
 
       // DEBTS
-      case '@main/@main/PAY_DEBT_REQUEST': {
+      case '@main/PAY_DEBT_REQUEST': {
         draft.loading = true;
         break;
       }
       case '@main/PAY_DEBT_SUCCESS': {
-        console.log('plain data', action.payload.protectionPlainData);
         draft.loading = false;
         draft.userData.scoreDescription = action.payload.scoreDescription;
         draft.userData.scoreLevel = action.payload.scoreLevel;
