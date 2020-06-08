@@ -26,17 +26,17 @@ Ao iniciar a aplicação, o app irá buscar os dados do usuário na API. Inicial
 ![img2](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado1.2.png)
 
 
-Assim que o usuário começa a pagar suas dívidas, o seu score começa a subir. Quando o score do usuário passa dos 30 pontos, este começa a receber ofertas de crédito. <br>
+Assim que o usuário começa a pagar suas dívidas, o seu score começa a subir. Quando o score do usuário passa dos 30 pontos, este começa a receber ofertas de crédito.
 ![img3](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado2.1.png)
-![img4](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado2.2.png)
+![img4](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado2.2.png)<br>
 
-Assim que o score passa de 50, o usuário recebe uma oferta de proteção de dados.
+Assim que o score passa de 50, o usuário recebe uma oferta de proteção de dados.<br>
 ![img5](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado4.png)<br>
 
-Assim que o score passa de 90, o usuário recebe um desconto na oferta de proteção de dados.<br>
-![img5](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado-5.png)
+Assim que o score passa de 90, o usuário recebe um desconto na oferta de proteção de dados. <br>
+![img6](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado-5.png)<br>
 
-Tecnologias
+### Tecnologias
 - React Native
 - Redux
 - Axios
