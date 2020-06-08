@@ -17,6 +17,9 @@ Siga os passos para rodar o projeto:
 3. Siga a documentação do [__React Native__](https://facebook.github.io/react-native/docs/running-on-device) para configurar o seu ambiente de desenvolvimento
 4. Rode `react-native run-android` ou `react-native run-ios` para instalar o app no Android ou no IOS
 
+### Rode os testes
+`yarn test` ou `npm test`
+
 ### Sobre o funcionamento da aplicação
 Ao iniciar a aplicação, o app irá buscar os dados do usuário na API. Inicialmente o usuário vem por padrão com um score baixo, que irá aumentar ao passo que este faz o pagamento das suas dívidas e/ou aceita uma oferta de crédito.
 ![img1](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado1.1.png)
@@ -28,9 +31,16 @@ Assim que o usuário começa a pagar suas dívidas, o seu score começa a subir.
 ![img4](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado2.2.png)
 
 Assim que o score passa de 50, o usuário recebe uma oferta de proteção de dados.
-![img5](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado4.png)
+![img5](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado4.png)<br>
 
-Assim que o score passa de 90, o usuário recebe um desconto na oferta de proteção de dados.
+Assim que o score passa de 90, o usuário recebe um desconto na oferta de proteção de dados.<br>
 ![img5](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado-5.png)
+
+Tecnologias
+- React Native
+- Redux
+- Axios
+- Yarn/Npm
+- Jest
 
 
