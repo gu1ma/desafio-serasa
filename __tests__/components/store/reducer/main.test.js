@@ -23,24 +23,7 @@ describe('Should test user data reducer', () => {
       scoreDescription: 'Mock pontuation description',
       scoreStatus: 'low',
       scoreLevel: 0,
-      debtData: [
-        {
-          id: 1,
-          uriImgDebt: {
-            uri: 'mock img debt',
-          },
-          oldValue: 'R$280,00',
-          newValue: 'por R$79,90',
-        },
-        {
-          id: 2,
-          uriImgDebt: {
-            uri: 'mock img credit',
-          },
-          oldValue: 'R$280,00',
-          newValue: 'por R$79,90',
-        },
-      ],
+      debtData: [],
       creditData: [],
       protectionPlainData: [],
     };
