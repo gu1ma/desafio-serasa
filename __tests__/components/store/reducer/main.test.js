@@ -1,6 +1,6 @@
 import * as Score from '~/store/modules/main/actions';
 import reducer, {INITIAL_STATE} from '~/store/modules/main/reducer';
-import {MOCK_DEBIT_STATE, MOCK_CREDIT_STATE} from '../../../data/main';
+import {MOCK_DEBIT_STATE, MOCK_DEFAULT_STATE} from '../../../data/main';
 
 describe('Should test user data reducer', () => {
   it('@main/GET_USER_DATA_REQUEST', () => {
@@ -53,7 +53,10 @@ describe('Should test user data reducer', () => {
 
 describe('Should test debt reducer', () => {
   it('@main/PAY_DEBT_REQUEST', () => {
-    const state = reducer(MOCK_DEBIT_STATE, Score.payDebtRequest(20, 1));
+    const state = reducer(
+      MOCK_DEBIT_STATE,
+      Score.payDebtRequest(MOCK_DEBIT_STATE.userData.score, 1)
+    );
 
     const stateResponse = {
       ...MOCK_DEBIT_STATE,
@@ -106,9 +109,12 @@ describe('Should test debt reducer', () => {
 
 describe('Should test credit reducer', () => {
   it('@main/ACCEPT_CREDIT_REQUEST', () => {
-    const state = reducer(MOCK_CREDIT_STATE, Score.acceptCreditRequest(20, 1));
+    const state = reducer(
+      MOCK_DEFAULT_STATE,
+      Score.acceptCreditRequest(MOCK_DEFAULT_STATE.userData.score, 1)
+    );
     const stateResponse = {
-      ...MOCK_CREDIT_STATE,
+      ...MOCK_DEFAULT_STATE,
       loading: true,
     };
 
@@ -127,7 +133,7 @@ describe('Should test credit reducer', () => {
     };
 
     const state = reducer(
-      MOCK_CREDIT_STATE,
+      MOCK_DEFAULT_STATE,
       Score.acceptCreditSuccess(
         mockResponse.score,
         2,
@@ -146,26 +152,64 @@ describe('Should test credit reducer', () => {
   });
 
   it('@main/ACCEPT_CREDIT_ERROR', () => {
+    const mockResponse = MOCK_DEFAULT_STATE.userData;
+    const state = reducer(MOCK_DEFAULT_STATE, Score.acceptCreditError({}));
+
+    expect(state).toStrictEqual({
+      userData: mockResponse,
+      loading: false,
+      error: true,
+    });
+  });
+});
+
+describe('Should test protection plain reducer', () => {
+  it('@main/ACCEPT_PROTECTION_PLAIN_REQUEST', () => {
+    const state = reducer(
+      MOCK_DEFAULT_STATE,
+      Score.acceptProtectionPlainRequest(MOCK_DEFAULT_STATE.userData.score, 1)
+    );
+    const stateResponse = {
+      ...MOCK_DEFAULT_STATE,
+      loading: true,
+    };
+
+    expect(state).toStrictEqual(stateResponse);
+  });
+
+  it('@main/ACCEPT_PROTECTION_PLAIN_SUCCESS', () => {
     const mockResponse = {
-      score: 25,
+      score: 45,
       scoreDescription: 'Mock pontuation description',
       scoreStatus: 'low',
       scoreLevel: 0,
       debtData: [],
-      protectionPlainData: null,
+      protectionPlainData: [],
       creditData: [],
     };
 
     const state = reducer(
-      MOCK_CREDIT_STATE,
-      Score.acceptCreditError(
+      MOCK_DEFAULT_STATE,
+      Score.acceptProtectionPlainSuccess(
         mockResponse.score,
         2,
         mockResponse.scoreDescription,
-        mockResponse.scoreLevel,
-        mockResponse.creditData,
-        mockResponse.protectionPlainData
+        mockResponse.scoreLevel
       )
+    );
+
+    expect(state).toStrictEqual({
+      userData: mockResponse,
+      loading: false,
+      error: false,
+    });
+  });
+
+  it('@main/ACCEPT_PROTECTION_PLAIN_ERROR', () => {
+    const mockResponse = MOCK_DEFAULT_STATE.userData;
+    const state = reducer(
+      MOCK_DEFAULT_STATE,
+      Score.acceptProtectionPlainError({})
     );
 
     expect(state).toStrictEqual({

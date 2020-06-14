@@ -12,7 +12,7 @@ export const MOCK_DEBIT_STATE = {
   error: false,
 };
 
-export const MOCK_CREDIT_STATE = {
+export const MOCK_DEFAULT_STATE = {
   userData: {
     score: 25,
     scoreDescription: 'Mock pontuation description',
