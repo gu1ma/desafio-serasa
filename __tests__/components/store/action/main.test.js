@@ -34,7 +34,9 @@ describe('Should test user data action', () => {
 
     expect(Actions.getUserDataError({})).toEqual(expected);
   });
+});
 
+describe('Should test debtCard', () => {
   it('payDebtRequest', () => {
     const mockPayload = {scoreValue: 25, id: 1};
     const expected = {
