@@ -1,10 +1,10 @@
-import * as Score from '~/store/modules/main/actions';
+import * as Actions from '~/store/modules/main/actions';
 import reducer, {INITIAL_STATE} from '~/store/modules/main/reducer';
 import {MOCK_DEBIT_STATE, MOCK_DEFAULT_STATE} from '../../../data/main';
 
 describe('Should test user data reducer', () => {
   it('@main/GET_USER_DATA_REQUEST', () => {
-    const state = reducer(INITIAL_STATE, Score.getUserDataRequest());
+    const state = reducer(INITIAL_STATE, Actions.getUserDataRequest());
 
     expect(state).toStrictEqual({
       userData: null,
@@ -30,7 +30,7 @@ describe('Should test user data reducer', () => {
 
     const state = reducer(
       INITIAL_STATE,
-      Score.getUserDataSuccess(mockResponse)
+      Actions.getUserDataSuccess(mockResponse)
     );
 
     expect(state).toStrictEqual({
@@ -41,7 +41,7 @@ describe('Should test user data reducer', () => {
   });
 
   it('@main/GET_USER_DATA_ERROR', () => {
-    const state = reducer(INITIAL_STATE, Score.getUserDataError());
+    const state = reducer(INITIAL_STATE, Actions.getUserDataError());
 
     expect(state).toStrictEqual({
       userData: null,
@@ -55,7 +55,7 @@ describe('Should test debt reducer', () => {
   it('@main/PAY_DEBT_REQUEST', () => {
     const state = reducer(
       MOCK_DEBIT_STATE,
-      Score.payDebtRequest(MOCK_DEBIT_STATE.userData.score, 1)
+      Actions.payDebtRequest(MOCK_DEBIT_STATE.userData.score, 1)
     );
 
     const stateResponse = {
@@ -79,7 +79,7 @@ describe('Should test debt reducer', () => {
 
     const state = reducer(
       MOCK_DEBIT_STATE,
-      Score.payDebtSuccess(
+      Actions.payDebtSuccess(
         mockResponse.score,
         2,
         mockResponse.scoreDescription,
@@ -97,7 +97,7 @@ describe('Should test debt reducer', () => {
   });
 
   it('@main/PAY_DEBT_ERROR', () => {
-    const state = reducer(MOCK_DEBIT_STATE, Score.payDebtError());
+    const state = reducer(MOCK_DEBIT_STATE, Actions.payDebtError());
 
     expect(state).toStrictEqual({
       userData: MOCK_DEBIT_STATE.userData,
@@ -111,7 +111,7 @@ describe('Should test credit reducer', () => {
   it('@main/ACCEPT_CREDIT_REQUEST', () => {
     const state = reducer(
       MOCK_DEFAULT_STATE,
-      Score.acceptCreditRequest(MOCK_DEFAULT_STATE.userData.score, 1)
+      Actions.acceptCreditRequest(MOCK_DEFAULT_STATE.userData.score, 1)
     );
     const stateResponse = {
       ...MOCK_DEFAULT_STATE,
@@ -134,7 +134,7 @@ describe('Should test credit reducer', () => {
 
     const state = reducer(
       MOCK_DEFAULT_STATE,
-      Score.acceptCreditSuccess(
+      Actions.acceptCreditSuccess(
         mockResponse.score,
         2,
         mockResponse.scoreDescription,
@@ -153,7 +153,7 @@ describe('Should test credit reducer', () => {
 
   it('@main/ACCEPT_CREDIT_ERROR', () => {
     const mockResponse = MOCK_DEFAULT_STATE.userData;
-    const state = reducer(MOCK_DEFAULT_STATE, Score.acceptCreditError({}));
+    const state = reducer(MOCK_DEFAULT_STATE, Actions.acceptCreditError({}));
 
     expect(state).toStrictEqual({
       userData: mockResponse,
@@ -167,7 +167,7 @@ describe('Should test protection plain reducer', () => {
   it('@main/ACCEPT_PROTECTION_PLAIN_REQUEST', () => {
     const state = reducer(
       MOCK_DEFAULT_STATE,
-      Score.acceptProtectionPlainRequest(MOCK_DEFAULT_STATE.userData.score, 1)
+      Actions.acceptProtectionPlainRequest(MOCK_DEFAULT_STATE.userData.score, 1)
     );
     const stateResponse = {
       ...MOCK_DEFAULT_STATE,
@@ -190,7 +190,7 @@ describe('Should test protection plain reducer', () => {
 
     const state = reducer(
       MOCK_DEFAULT_STATE,
-      Score.acceptProtectionPlainSuccess(
+      Actions.acceptProtectionPlainSuccess(
         mockResponse.score,
         2,
         mockResponse.scoreDescription,
@@ -209,7 +209,7 @@ describe('Should test protection plain reducer', () => {
     const mockResponse = MOCK_DEFAULT_STATE.userData;
     const state = reducer(
       MOCK_DEFAULT_STATE,
-      Score.acceptProtectionPlainError({})
+      Actions.acceptProtectionPlainError({})
     );
 
     expect(state).toStrictEqual({
