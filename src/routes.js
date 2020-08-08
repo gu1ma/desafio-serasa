@@ -2,6 +2,7 @@ import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 
 import Main, {MainNavigationOptions} from '~/pages/Main';
+import Error, {ErrorNavigationOptions} from '~/pages/Error';
 
 import colors from '~/styles/colors';
 
@@ -11,6 +12,10 @@ export default createAppContainer(
       Main: {
         screen: Main,
         navigationOptions: MainNavigationOptions,
+      },
+      Error: {
+        screen: Error,
+        navigationOptions: ErrorNavigationOptions,
       },
     },
     {

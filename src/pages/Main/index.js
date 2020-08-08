@@ -31,13 +31,19 @@ export function MainNavigationOptions({navigation}) {
 }
 
 export default function Main({navigation}) {
-  const {userData} = useSelector(state => state.main);
+  const {userData, error} = useSelector(state => state.main);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getUserDataRequest());
   }, []);
+
+  useEffect(() => {
+    if (error) {
+      navigation.navigate('Error');
+    }
+  }, [error]);
 
   const [borderColor, setBorderColor] = useState('#fff');
   const [initialColor, setInitialColor] = useState('#fff');
