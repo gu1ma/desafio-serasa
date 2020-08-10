@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
 import {StatusBar} from 'react-native';
+import {useDispatch, useSelector} from 'react-redux';
+
 import Loader from 'react-native-modal-loader';
-import {Container} from './styles';
+import {ContainerScroll, ContainerView} from './styles';
 
 import CardHead from '~/components/CardHead';
 import CardScore from '~/components/CardScore';
@@ -78,27 +79,29 @@ export default function Main({navigation}) {
       <StatusBar barStyle="light-content" backgroundColor={borderColor} />
       <Loader loading={loading} color={initialColor} />
       {userData && (
-        <Container>
-          <CardHead
-            userData={userData}
-            initialColor={initialColor}
-            finalColor={finalColor}
-            borderColor={borderColor}
-          />
-          <CardScore userData={userData} />
+        <ContainerScroll>
+          <ContainerView>
+            <CardHead
+              userData={userData}
+              initialColor={initialColor}
+              finalColor={finalColor}
+              borderColor={borderColor}
+            />
+            <CardScore userData={userData} />
 
-          {userData.debtData.map(debt => (
-            <CardDebt debtData={debt} key={debt.id} />
-          ))}
+            {userData.debtData.map(debt => (
+              <CardDebt debtData={debt} key={debt.id} />
+            ))}
 
-          {userData.creditData.map(credit => (
-            <CardCredit creditData={credit} key={credit.id} />
-          ))}
+            {userData.creditData.map(credit => (
+              <CardCredit creditData={credit} key={credit.id} />
+            ))}
 
-          {userData.protectionPlainData.map(plain => (
-            <CardProtectionPlain protectionPlainData={plain} key={plain.id} />
-          ))}
-        </Container>
+            {userData.protectionPlainData.map(plain => (
+              <CardProtectionPlain protectionPlainData={plain} key={plain.id} />
+            ))}
+          </ContainerView>
+        </ContainerScroll>
       )}
     </>
   );
