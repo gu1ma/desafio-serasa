@@ -64,11 +64,13 @@ export const ButtonCardProtectionContainer = styled.View`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 25px;
-  margin-bottom: 15px;
+  margin-top: 10px;
+  margin-bottom: 0px;
 `;
 
-export const ButtonCardProtection = styled.TouchableOpacity``;
+export const ButtonCardProtection = styled.TouchableOpacity`
+  padding: 15px;
+`;
 
 export const TextButtonCardProtection = styled.Text`
   color: ${colors.buttons.purple};

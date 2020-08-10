@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
 import {StatusBar} from 'react-native';
-import {Container} from './styles';
+import {useDispatch, useSelector} from 'react-redux';
+
+import Loader from 'react-native-modal-loader';
+import {ContainerScroll, ContainerView} from './styles';
 
 import CardHead from '~/components/CardHead';
 import CardScore from '~/components/CardScore';
@@ -9,9 +11,9 @@ import CardDebt from '~/components/CardDebt';
 import CardCredit from '~/components/CardCredit';
 import CardProtectionPlain from '~/components/CardProtectionPlain';
 
-import {getUserDataRequest} from '~/store/modules/main/actions';
-
 import colors from '~/styles/colors';
+
+import {getUserDataRequest} from '~/store/modules/main/actions';
 
 export function MainNavigationOptions({navigation}) {
   return {
@@ -31,7 +33,7 @@ export function MainNavigationOptions({navigation}) {
 }
 
 export default function Main({navigation}) {
-  const {userData, error} = useSelector(state => state.main);
+  const {loading, userData, error} = useSelector(state => state.main);
 
   const dispatch = useDispatch();
 
@@ -45,9 +47,9 @@ export default function Main({navigation}) {
     }
   }, [error]);
 
-  const [borderColor, setBorderColor] = useState('#fff');
-  const [initialColor, setInitialColor] = useState('#fff');
-  const [finalColor, setFinalColor] = useState('#fff');
+  const [borderColor, setBorderColor] = useState(colors.status.danger.dark);
+  const [initialColor, setInitialColor] = useState(colors.status.danger.dark);
+  const [finalColor, setFinalColor] = useState(colors.status.danger.light);
 
   useEffect(() => {
     if (userData !== null) {
@@ -73,31 +75,34 @@ export default function Main({navigation}) {
   }, [userData]);
 
   return (
-    userData && (
-      <>
-        <StatusBar barStyle="light-content" backgroundColor={borderColor} />
-        <Container>
-          <CardHead
-            userData={userData}
-            initialColor={initialColor}
-            finalColor={finalColor}
-            borderColor={borderColor}
-          />
-          <CardScore userData={userData} />
+    <>
+      <StatusBar barStyle="light-content" backgroundColor={borderColor} />
+      <Loader loading={loading} color={initialColor} />
+      {userData && (
+        <ContainerScroll>
+          <ContainerView>
+            <CardHead
+              userData={userData}
+              initialColor={initialColor}
+              finalColor={finalColor}
+              borderColor={borderColor}
+            />
+            <CardScore userData={userData} />
 
-          {userData.debtData.map(debt => (
-            <CardDebt debtData={debt} key={debt.id} />
-          ))}
+            {userData.debtData.map(debt => (
+              <CardDebt debtData={debt} key={debt.id} />
+            ))}
 
-          {userData.creditData.map(credit => (
-            <CardCredit creditData={credit} key={credit.id} />
-          ))}
+            {userData.creditData.map(credit => (
+              <CardCredit creditData={credit} key={credit.id} />
+            ))}
 
-          {userData.protectionPlainData.map(plain => (
-            <CardProtectionPlain protectionPlainData={plain} key={plain.id} />
-          ))}
-        </Container>
-      </>
-    )
+            {userData.protectionPlainData.map(plain => (
+              <CardProtectionPlain protectionPlainData={plain} key={plain.id} />
+            ))}
+          </ContainerView>
+        </ContainerScroll>
+      )}
+    </>
   );
 }
