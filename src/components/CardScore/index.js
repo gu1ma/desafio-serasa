@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
@@ -20,6 +20,8 @@ import {
 } from './styles';
 
 export default function CardScore({userData}) {
+  const [showMore, setShowMore] = useState(false);
+
   return (
     userData && (
       <Container>
@@ -30,29 +32,35 @@ export default function CardScore({userData}) {
           {userData.scoreDescription}
         </TextPointsDescription>
         <HorizontalLine />
-        <ButtonKnowMore>
+        <ButtonKnowMore onPress={() => setShowMore(!showMore)}>
           <TextKnowMore>
             Saiba mais{' '}
-            <Icon name="chevron-up" color={colors.buttons.purple} size={14} />
+            <Icon
+              name={showMore ? 'chevron-up' : 'chevron-down'}
+              color={colors.buttons.purple}
+              size={14}
+            />
           </TextKnowMore>
         </ButtonKnowMore>
-        <ContainerPointsDescription>
-          <ScoreDescription
-            desc="0 a 30"
-            colorStart="#e6602c"
-            colorEnd="#b0b009"
-          />
-          <ScoreDescription
-            desc="31 a 60"
-            colorStart="#b0b009"
-            colorEnd="#24bfc7"
-          />
-          <ScoreDescription
-            desc="61 a 100"
-            colorStart="#24bfc7"
-            colorEnd="#0261a1"
-          />
-        </ContainerPointsDescription>
+        {showMore && (
+          <ContainerPointsDescription>
+            <ScoreDescription
+              desc="0 a 30"
+              colorStart="#e6602c"
+              colorEnd="#b0b009"
+            />
+            <ScoreDescription
+              desc="31 a 60"
+              colorStart="#b0b009"
+              colorEnd="#24bfc7"
+            />
+            <ScoreDescription
+              desc="61 a 100"
+              colorStart="#24bfc7"
+              colorEnd="#0261a1"
+            />
+          </ContainerPointsDescription>
+        )}
       </Container>
     )
   );
