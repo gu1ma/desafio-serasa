@@ -4,7 +4,7 @@ import AnimateNumber from 'react-native-animate-number';
 
 export const Container = styled.View`
   margin-top: -50px;
-  padding: 20px;
+  padding: 10px 20px;
   background: white;
   border-radius: 5px;
   border: #ccc 1px solid;
@@ -33,7 +33,7 @@ export const TextPointsDescription = styled.Text`
 `;
 
 export const ButtonKnowMore = styled.TouchableOpacity`
-  margin-top: 15px;
+  padding: 15px;
 `;
 
 export const TextKnowMore = styled.Text`
