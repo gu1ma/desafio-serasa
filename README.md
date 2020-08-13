@@ -4,10 +4,6 @@ utilizando a arquitetura Flux para a gerência de estados dos componentes.
 
 ![serasagif](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa.gif)
 
-_ | 
------------- | 
-![img1](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado1.1.png) | 
-
 ### Iniciando
 Siga as instruções para executar o projeto no seu ambiente de desenvolvimento.
 
