@@ -1,6 +1,6 @@
 import * as Actions from '~/store/modules/main/actions';
 import reducer, {INITIAL_STATE} from '~/store/modules/main/reducer';
-import {MOCK_DEBIT_STATE, MOCK_DEFAULT_STATE} from '../../../data/main';
+import {MOCK_DEBIT_STATE, MOCK_DEFAULT_STATE} from '../../../data/main'; //
 
 describe('Should test user data reducer', () => {
   it('@main/GET_USER_DATA_REQUEST', () => {
