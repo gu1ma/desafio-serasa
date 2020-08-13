@@ -4,6 +4,10 @@ utilizando a arquitetura Flux para a gerência de estados dos componentes.
 
 ![serasagif](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa.gif)
 
+_ | 
+------------ | 
+![img1](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado1.1.png) | 
+
 ### Iniciando
 Siga as instruções para executar o projeto no seu ambiente de desenvolvimento.
 
@@ -21,20 +25,27 @@ Siga os passos para rodar o projeto:
 `yarn test` ou `npm test`
 
 ### Sobre o funcionamento da aplicação
-Ao iniciar a aplicação, o app irá buscar os dados do usuário na API. Inicialmente o usuário vem por padrão com um score baixo, que irá aumentar ao passo que este faz o pagamento das suas dívidas e/ou aceita uma oferta de crédito.
-![img1](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado1.1.png)
-![img2](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado1.2.png)
+Ao iniciar a aplicação, o app irá buscar os dados do usuário na API. Inicialmente o usuário vem por padrão com um score baixo, que irá aumentar ao passo que este faz o pagamento das suas dívidas e/ou aceita uma oferta de crédito.<br>
+
+_ | _
+------------ | -------------
+![img1](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado1.1.png) | ![img2](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado1.2.png)
 
 
 Assim que o usuário começa a pagar suas dívidas, o seu score começa a subir. Quando o score do usuário passa dos 30 pontos, este começa a receber ofertas de crédito. <br>
-![img3](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado2.1.png)
-![img4](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado2.2.png)<br>
+_ | _
+------------ | -------------
+![img3](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado2.1.png) | ![img4](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado2.2.png)
 
 Assim que o score passa de 50, o usuário recebe uma oferta de proteção de dados.<br>
-![img5](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado4.png)<br>
+_ |
+------------ |
+![img5](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado4.png) |
 
 Assim que o score passa de 90, o usuário recebe um desconto na oferta de proteção de dados. <br>
-![img6](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado-5.png)<br>
+_ |
+------------ |
+![img6](https://github.com/gu1ma/desafio-serasa/blob/master/app-imgs-examples/serasa-estado-5.png) |
 
 ### Tecnologias
 - React Native
