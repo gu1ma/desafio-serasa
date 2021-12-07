@@ -1,4 +1,12 @@
 # Desafio serasa!
+<p align="left">
+  <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/gu1ma/desafio-serasa" />
+  <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/gu1ma/desafio-serasa" />
+  <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/gu1ma/desafio-serasa" />
+  <img alt="GitHub Package.json Version" src="https://img.shields.io/github/package-json/v/gu1ma/desafio-serasa" />
+  <img alt="Github License" src="https://img.shields.io/github/license/gu1ma/desafio-serasa" />
+</p>
+
 Este repositório contém os dados da aplicação do desfio Serasa! Esta aplicação foi desenvolvida em [__React Native__](https://reactnative.dev/)
 utilizando a arquitetura Flux para a gerência de estados dos componentes.
 
