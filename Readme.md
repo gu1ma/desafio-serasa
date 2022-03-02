@@ -15,11 +15,6 @@ utilizando a arquitetura Flux para a gerência de estados dos componentes.
 ### Iniciando
 Siga as instruções para executar o projeto no seu ambiente de desenvolvimento.
 
-### Pré requisitos
-Você irá precisar do Backend que serve o dados pra essa aplicação. Acesse o [__repositório da api__](https://github.com/gu1ma/desafio-serasa-api) 
-e siga os passos para iniciar o web service.
-### Instalando
-Siga os passos para rodar o projeto:
 1. Baixe o projeto com o comando `git clone https://github.com/gu1ma/desafio-serasa.git`
 2. Rode o comando `yarn` ou `npm install` para instalar as dependências
 3. Siga a documentação do [__React Native__](https://facebook.github.io/react-native/docs/running-on-device) para configurar o seu ambiente de desenvolvimento
