@@ -1,5 +1,6 @@
 # Desafio serasa!
 <p align="left">
+  <img alt="Android build status" src="https://build.appcenter.ms/v0.1/apps/7cd76f86-c316-4cb0-a9fa-193615bc6d9d/branches/master/badge">
   <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/gu1ma/desafio-serasa" />
   <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/gu1ma/desafio-serasa" />
   <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/gu1ma/desafio-serasa" />
